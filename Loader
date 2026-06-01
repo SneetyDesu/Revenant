@@ -2,29 +2,30 @@
 local placeId = game.PlaceId
 
 local games = {
-    -- The Strongest Battlegrounds
     [10449761463] = function()
+        task.wait(10)
         loadstring(game:HttpGet(
-            "https://raw.githubusercontent.com/ATrainz/Phantasm/refs/heads/main/Games/TSB.lua"
+            "https://raw.githubusercontent.com/miikicomsono/Revenant/refs/heads/main/Loader"
         ))()
     end,
-    -- Ink Game
     [99567941238278] = function()
+        task.wait(10)
         loadstring(game:HttpGet(
-            "https://raw.githubusercontent.com/ATrainz/Phantasm/refs/heads/main/Games/InkGame.lua"
+            "https://raw.githubusercontent.com/miikicomsono/Revenant/refs/heads/main/Loader"
         ))()
     end,
 }
 
 if games[placeId] then
-    print("Revenant | Загрузка скрипта...")
-    games[placeId]()
-    print("Revenant | Готово!")
+    task.spawn(function()
+        local ok, err = pcall(games[placeId])
+        if not ok then
+            warn("Ошибка: " .. tostring(err))
+        end
+    end)
 else
-    warn("Revenant | Игра не поддерживается. PlaceId: " .. tostring(placeId))
+    warn("Игра не поддерживается: " .. tostring(placeId))
 end
-
-
 
 
 
