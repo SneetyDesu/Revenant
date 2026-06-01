@@ -6,14 +6,14 @@ local games = {
     [10449761463] = function()
         task.wait(10)
         loadstring(game:HttpGet(
-            "https://raw.githubusercontent.com/sneetydesu/Revenant/refs/heads/main/sonic.lua"
+            "https://raw.githubusercontent.com/sneetydesu/Revenant/refs/heads/main/monochome.lua"
         ))()
     end,
     -- Ink Game
     [99567941238278] = function()
         task.wait(10)
         loadstring(game:HttpGet(
-            "https://raw.githubusercontent.com/sneetydesu/Revenant/refs/heads/main/sonic.lua"
+            "https://raw.githubusercontent.com/sneetydesu/Revenant/refs/heads/main/monochome.lua"
         ))()
     end,
 }
