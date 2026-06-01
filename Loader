@@ -1,5 +1,28 @@
 -- https://discord.gg/TYdSMmQaF9
+local placeId = game.PlaceId
 
+local games = {
+    -- The Strongest Battlegrounds
+    [10449761463] = function()
+        loadstring(game:HttpGet(
+            "https://raw.githubusercontent.com/ATrainz/Phantasm/refs/heads/main/Games/TSB.lua"
+        ))()
+    end,
+    -- Ink Game
+    [99567941238278] = function()
+        loadstring(game:HttpGet(
+            "https://raw.githubusercontent.com/ATrainz/Phantasm/refs/heads/main/Games/InkGame.lua"
+        ))()
+    end,
+}
+
+if games[placeId] then
+    print("Revenant | Загрузка скрипта...")
+    games[placeId]()
+    print("Revenant | Готово!")
+else
+    warn("Revenant | Игра не поддерживается. PlaceId: " .. tostring(placeId))
+end
 
 
 
